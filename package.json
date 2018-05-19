@@ -1,0 +1,14 @@
+{
+  "name": "inspection-app",
+  "version": "0.0.1",
+  "description": "Inspection app api",
+  "main": "server.js",
+  "author": "Bharat Bhushan",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.10.8",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "pg": "^7.3.0"
+  }
+}

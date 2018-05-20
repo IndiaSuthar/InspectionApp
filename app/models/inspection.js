@@ -19,13 +19,14 @@ module.exports = {
 			});
 		},
 
+
 		//UPDATE items SET text=($1), complete=($2) WHERE id=($3)
 		updateInspectionData : (req,res) =>{
 			var queryParam = [];
 			queryParam.push(req.body.activationSummary);
-			queryParam.push(req.body.id);
+			queryParam.push(req.body.name);
 			var client = clientConnection.getConnection();
-			var query = 'UPDATE salesforce.Inspection__c SET Activity_Summary__c=($1) WHERE Id=($2)';
+			var query = 'UPDATE salesforce.Inspection__c SET Activity_Summary__c=$1 WHERE Name=$2';
 			client.query(query, queryParam,(err, result) => {
 				console.log(err ? err.stack : result.rows[0].message);
 				client.end();

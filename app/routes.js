@@ -10,6 +10,10 @@ module.exports = function (app) {
         inspections.saveInspectionData(req,res);
     });
 
+    app.post('/api/updateinspection',function(req,res){
+        inspections.updateInspectionData(req,res);
+    });
+
     app.get('/api/getinspections',function(req,res){
         inspections.getInspectionData(req,res);
     })

@@ -6,7 +6,11 @@ var inspections = require('./models/inspection');
 
 module.exports = function (app) {
 
-    app.post('/api/inspection',function(req,res){
+    app.post('/api/saveinspection',function(req,res){
         inspections.saveInspectionData(req,res);
     });
+
+    app.get('/api/getinspections',function(req,res){
+        inspections.getInspectionData(req,res);
+    })
 };

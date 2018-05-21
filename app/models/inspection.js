@@ -26,6 +26,7 @@ module.exports = {
 			queryParam.push(req.body.activationSummary);
 			queryParam.push(req.body.name);
 			var client = clientConnection.getConnection();
+			console.log(req.body)
 			var query = 'UPDATE salesforce.Inspection__c SET Activity_Summary__c=$1 WHERE Name=$2';
 			client.query(query, queryParam,(err, result) => {
 				console.log(err ? err.stack : result);

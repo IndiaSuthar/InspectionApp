@@ -6,7 +6,8 @@
 
 var express = require('express');
 var app = express(); 						// create our app w/ express
-var port = process.env.PORT || 8080; 				// set the port
+var port = process.env.PORT || 8080; 	
+var fs = require('fs');			// set the port
 //var database = require('./config/database'); 			// load the database config
 var bodyParser = require('body-parser');
 var morgan  = require('morgan');

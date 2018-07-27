@@ -16,5 +16,13 @@ module.exports = function (app) {
 
     app.get('/api/getinspections',function(req,res){
         inspections.getInspectionData(req,res);
-    })
+    });
+
+    app.get('/',function(req,response){
+        fs.readFile('./index.html', function (err, html) {
+            response.writeHeader(200, {"Content-Type": "text/html"});  
+            response.write(html);  
+            response.end(); 
+        });
+    });
 };
